@@ -19,5 +19,5 @@
 
 ### 1. Клонируй репозиторий
 ```bash
-git clone https://github.com/твоя-ссылка/nigga-project.git
+git clone https://github.com/oybek6445/Imthon-psql-TS.git
 cd nigga-project
