@@ -1,8 +1,8 @@
-import { Pool } from 'pg';
+import { Pool } from 'postgres-pool';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: 'postgresql://postgres:mitron2020@localhost:5432/postgres',
 });

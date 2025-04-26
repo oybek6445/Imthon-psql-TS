@@ -1,0 +1,204 @@
+{
+  "info": {
+    "name": "NiggaProject",
+    "_postman_id": "b0aeb8c6-f26c-4b1f-8236-334c9f4d5276",
+    "description": "Collection for full test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/auth/register", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["auth", "register"] },
+            "body": { "mode": "raw", "raw": "{\n    \"username\": \"bro\",\n    \"password\": \"nigga123\"\n}" }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/auth/login", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["auth", "login"] },
+            "body": { "mode": "raw", "raw": "{\n    \"username\": \"bro\",\n    \"password\": \"nigga123\"\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blogs",
+      "item": [
+        {
+          "name": "Create Blog",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/blogs/create", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "create"] },
+            "body": { "mode": "raw", "raw": "{\n    \"name\": \"NiggaBlog\",\n    \"description\": \"Тупо блог для своих\"\n}" }
+          }
+        },
+        {
+          "name": "Get My Blogs",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/blogs/get-my-blogs", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "get-my-blogs"] }
+          }
+        },
+        {
+          "name": "Search Blogs",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/blogs/search?query=nigga", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "search"], "query": [{ "key": "query", "value": "nigga" }] }
+          }
+        },
+        {
+          "name": "Get My Joined Blogs",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/blogs/get-my-joined-blogs", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "get-my-joined-blogs"] }
+          }
+        },
+        {
+          "name": "Get Blog Info",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/blogs/get-blog-info/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "get-blog-info", "1"] }
+          }
+        },
+        {
+          "name": "Update Blog",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/blogs/update/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "update", "1"] },
+            "body": { "mode": "raw", "raw": "{\n    \"name\": \"Updated Blog\",\n    \"description\": \"Updated description\"\n}" }
+          }
+        },
+        {
+          "name": "Delete Blog",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "http://localhost:3000/blogs/delete/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "delete", "1"] }
+          }
+        },
+        {
+          "name": "Join Blog",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/blogs/join-blog", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "join-blog"] },
+            "body": { "mode": "raw", "raw": "{\n    \"blogId\": 1\n}" }
+          }
+        },
+        {
+          "name": "Leave Blog",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/blogs/leave-blog", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "leave-blog"] },
+            "body": { "mode": "raw", "raw": "{\n    \"blogId\": 1\n}" }
+          }
+        },
+        {
+          "name": "Get Blog Users",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/blogs/get-users/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["blogs", "get-users", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/posts/create", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["posts", "create"] },
+            "body": { "mode": "raw", "raw": "{\n    \"blogId\": 1,\n    \"title\": \"Первый пост\",\n    \"content\": \"Контент первого поста\"\n}" }
+          }
+        },
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/posts/get-all/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["posts", "get-all", "1"] }
+          }
+        },
+        {
+          "name": "Get Post By ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/posts/get-by-id/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["posts", "get-by-id", "1"] }
+          }
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/posts/update/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["posts", "update", "1"] },
+            "body": { "mode": "raw", "raw": "{\n    \"title\": \"Updated Post\",\n    \"content\": \"Updated content\"\n}" }
+          }
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "http://localhost:3000/posts/delete/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["posts", "delete", "1"] }
+          }
+        },
+        {
+          "name": "Sort Posts By Date",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/posts/sort-by-date/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["posts", "sort-by-date", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Create Comment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/comments/create", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["comments", "create"] },
+            "body": { "mode": "raw", "raw": "{\n    \"postId\": 1,\n    \"content\": \"Красивый коммент\"\n}" }
+          }
+        },
+        {
+          "name": "Get Post Comments",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:3000/comments/1/get-comments", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["comments", "1", "get-comments"] }
+          }
+        },
+        {
+          "name": "Update Comment",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "http://localhost:3000/comments/update/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["comments", "update", "1"] },
+            "body": { "mode": "raw", "raw": "{\n    \"content\": \"Updated comment content\"\n}" }
+          }
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "http://localhost:3000/comments/delete/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["comments", "delete", "1"] }
+          }
+        }
+      ]
+    }
+  ]
+}

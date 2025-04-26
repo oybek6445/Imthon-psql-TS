@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const authMIddleware_1 = require("../middleware/authMIddleware");
+const blogControllet_1 = require("../controller/blogControllet");
+const router = (0, express_1.Router)();
+router.post('/create', authMIddleware_1.authMiddleware, blogControllet_1.createBlog);
+router.get('/get-my-blogs', authMIddleware_1.authMiddleware, blogControllet_1.getMyBlogs);
+router.get('/get-my-joined-blogs', authMIddleware_1.authMiddleware, blogControllet_1.getMyJoinedBlogs);
+router.get('/get-blog-info/:id', authMIddleware_1.authMiddleware, blogControllet_1.getBlogInfo);
+router.put('/update/:id', authMIddleware_1.authMiddleware, blogControllet_1.updateBlog);
+router.delete('/delete/:id', authMIddleware_1.authMiddleware, blogControllet_1.deleteBlog);
+router.get('/search', authMIddleware_1.authMiddleware, blogControllet_1.searchBlogs);
+router.post('/join-blog', authMIddleware_1.authMiddleware, blogControllet_1.joinBlog);
+router.post('/leave-blog', authMIddleware_1.authMiddleware, blogControllet_1.leaveBlog);
+router.get('/get-users/:blogId', authMIddleware_1.authMiddleware, blogControllet_1.getBlogUsers);
+exports.default = router;

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken'
 
-export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+export const authMiddleware = (req: any, res: any, next: NextFunction) => {
   const token = req.cookies.token;
   if (!token) return res.status(401).send('Unauthorized');
 
