@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { pool } from '../db/pool';
 
-export const createComment = async (req: Request, res: Response) => {
+export const createComment = async (req: Request, res: any) => {
   try {
     const { postId, content } = req.body;
     const userId = (req as any).user.id;
@@ -37,7 +37,7 @@ export const getCommentsByPostId = async (req: Request, res: Response) => {
   }
 };
 
-export const updateComment = async (req: Request, res: Response) => {
+export const updateComment = async (req: Request, res: any) => {
   try {
     const { commentId } = req.params;
     const { content } = req.body;
@@ -55,7 +55,7 @@ export const updateComment = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteComment = async (req: Request, res: Response) => {
+export const deleteComment = async (req: Request, res: any) => {
   try {
     const { commentId } = req.params;
     const userId = (req as any).user.id;
